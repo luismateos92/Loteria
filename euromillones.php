@@ -1,10 +1,10 @@
 <?php
 
 // Conexión con la BD
-define("DB_HOST","localhost" ); 
-define("DB_USER", "root"); 
-define("DB_PASS", "evalua"); 
-define("DB_DATABASE", "loterias"); 
+define("DB_HOST","host" ); 
+define("DB_USER", "username"); 
+define("DB_PASS", "password"); 
+define("DB_DATABASE", "database"); 
 
 // Create connection
 $objetoMysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
