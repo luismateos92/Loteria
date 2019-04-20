@@ -43,3 +43,51 @@ CREATE TABLE IF NOT EXISTS primitiva (
  	PRIMARY KEY (`id`), 
  	UNIQUE KEY `fecha` (`fecha`)
  	) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de la primitiva';
+
+CREATE TABLE IF NOT EXISTS euromillones_numeros_stats (
+	`id` int(5) NOT NULL AUTO_INCREMENT COMMENT 'Identidicador',
+	`numero` int(3) COMMENT 'Numeros de la combinacion (del 1 al 50)',
+	`cantidad` int(6) COMMENT 'Cantidad de vecez que ha salido un numero a lo largo del tiempo',
+	PRIMARY KEY (`id`), 
+	UNIQUE KEY `numero` (`numero`)
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de estadisticas de numeros del euromillones';
+
+CREATE TABLE IF NOT EXISTS euromillones_estrellas_stats (
+	`id` int(5) NOT NULL AUTO_INCREMENT COMMENT 'Identidicador',
+	`estrella` int(3) COMMENT 'Numeros de la combinacion de las estrellas (del 1 al 12)',
+	`cantidad_estrella` int(6) COMMENT 'Cantidad de vecez que ha salido un numero a lo largo del tiempo',
+	PRIMARY KEY (`id`), 
+	UNIQUE KEY `estrella` (`estrella`)
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de estadisticas de las estrellas del euromillones';
+
+CREATE TABLE IF NOT EXISTS primitiva_numeros_stats (
+	`id` int(5) NOT NULL AUTO_INCREMENT COMMENT 'Identidicador',
+	`numero` int(3) COMMENT 'Numeros de la combinacion (del 1 al 49)',
+	`cantidad` int(6) COMMENT 'Cantidad de vecez que ha salido un numero a lo largo del tiempo',
+	PRIMARY KEY (`id`), 
+	UNIQUE KEY `numero` (`numero`)
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de estadisticas de numeros de la primitiva';
+
+CREATE TABLE IF NOT EXISTS primitiva_complementario_stats (
+	`id` int(5) NOT NULL AUTO_INCREMENT COMMENT 'Identidicador',
+	`numero` int(3) COMMENT 'Numero complementario (del 1 al 49)',
+	`cantidad` int(6) COMMENT 'Cantidad de vecez que ha salido un numero a lo largo del tiempo',
+	PRIMARY KEY (`id`), 
+	UNIQUE KEY `numero` (`numero`)
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de estadisticas del numero complementario de la primitiva';
+
+CREATE TABLE IF NOT EXISTS primitiva_reintegro_stats (
+	`id` int(5) NOT NULL AUTO_INCREMENT COMMENT 'Identidicador',
+	`numero` int(3) COMMENT 'Numeros de reintegro (del 0 al 9)',
+	`cantidad` int(6) COMMENT 'Cantidad de vecez que ha salido un numero a lo largo del tiempo',
+	PRIMARY KEY (`id`), 
+	UNIQUE KEY `numero` (`numero`)
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de estadisticas del numero de reintegro de la primitiva';
+
+CREATE TABLE IF NOT EXISTS primitiva_joker_stats (
+	`id` int(5) NOT NULL AUTO_INCREMENT COMMENT 'Identidicador',
+	`numero` int(3) COMMENT 'Numeros de la combinacion del joker (del 0 al 9)',
+	`cantidad` int(6) COMMENT 'Cantidad de vecez que ha salido un numero a lo largo del tiempo',
+	PRIMARY KEY (`id`), 
+	UNIQUE KEY `numero` (`numero`)
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla de estadisticas de los numeros del joker de la primitiva';
